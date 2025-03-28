@@ -34,7 +34,7 @@ class UserAdmin(BaseUserAdmin):
 
 @admin.register(UserProfile)
 class UserProfileAdmin(admin.ModelAdmin):
-    list_display = ['id', 'user', 'birthday','city', 'country', 'gold_member']
+    list_display = ['id', 'custom_user_id', 'user', 'birthday','city', 'country', 'gold_member']
     list_filter = ['gold_member']
 
 

@@ -61,7 +61,7 @@ class UserProfile(models.Model):
     product_list = models.ManyToManyField(Product, related_name='product_lists', blank=True)
     service_list = models.ManyToManyField(Service, related_name='service_lists', blank=True)
     support_list = models.ManyToManyField(Support, related_name='support_lists', blank=True)
-    conversion_rate = models.IntegerField(default=0)
+    custom_user_id = models.IntegerField(blank=True, default=0)
 
     def __str__(self):
         return self.user.email + " " + str(

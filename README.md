@@ -1,4 +1,6 @@
-## Service Recommendation System
+# Dell Hackathon 2019
+
+### Service Recommendation System
 
   - Proactive Support Recommendations and measures to increase the conversion rate
 
@@ -24,4 +26,10 @@ python3 manage.py migrate
 python3 manage.py runserver
 ```
 
-***bug fixes and feature enhancements are going on ;-;***
+# Team Number : 8
+
+## Team Members 
+ - Smiti Thapar
+ - Sagrika Chauhan
+ - Riya Ranjan
+ - Priya Garg

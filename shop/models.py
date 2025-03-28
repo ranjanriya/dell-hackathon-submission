@@ -34,14 +34,14 @@ class Product(models.Model):
     available = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    conversion_rate = models.IntegerField(default=0, blank=True)
+    product_id = models.IntegerField(blank=True, default=0)
 
     class Meta:
         ordering = ('name',)
         index_together = (('id', 'slug'),)
 
     def __str__(self):
-        return self.name
+        return self.name + " " + str(self.product_id)
 
     def get_absolute_url(self):
         return reverse('shop:product_detail',
@@ -49,10 +49,11 @@ class Product(models.Model):
 
 
 class Service(models.Model):
+    product = models.OneToOneField(Product, default="", on_delete=models.CASCADE)
     name = models.CharField(max_length=200, db_index=True)
     slug = models.SlugField(max_length=200, db_index=True, default="")
     description = models.TextField(blank=True)
-    conversion_rate = models.IntegerField(default=0, blank=True)
+    service_id = models.IntegerField(blank=True, default=0)
 
     class Meta:
         ordering = ('name',)
@@ -70,6 +71,7 @@ class Support(models.Model):
     name = models.CharField(max_length=400, db_index=True)
     slug = models.SlugField(max_length=400, db_index=True, default="")
     description = models.TextField(blank=True)
+    support_id = models.IntegerField(blank=True, default=0)
 
     class Meta:
         ordering = ('name',)
@@ -81,3 +83,12 @@ class Support(models.Model):
     def get_absolute_url(self):
         return reverse('shop:support_page',
                        args=[self.id, self.slug])
+
+
+class Feedback(models.Model):
+    name = models.CharField(max_length=100, blank=True)
+    rating = models.IntegerField(blank=True)
+    comments = models.CharField(max_length=500, blank=True)
+
+    def __str__(self):
+        return self.name + " " + str(self.rating)

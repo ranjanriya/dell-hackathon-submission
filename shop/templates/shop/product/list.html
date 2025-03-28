@@ -18,6 +18,10 @@
         </li>
       {% endfor %}
     </ul>
+  <br></br>
+  <a href="{% url 'shop:give_feedback' %}" class="btn btn-success">Give Feedback</a>
+  <h3></h3>
+
   </div>
   <div id="main" class="product-list">
     <h1>{% if category %}{{ category.name }}{% else %}Purchased Items{% endif %}</h1>

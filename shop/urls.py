@@ -9,7 +9,8 @@ urlpatterns = [
          name='product_list_by_category'),
     path('<int:id>/<slug:slug>/', views.product_detail,
          name='product_detail'),
-    path('services', views.service_page, name='service_page'),
     path('supports', views.support_page, name='support_page'),
-    path('service/purchased/', views.service_purchased, name='service_purchased'),
+    path('services-/<int:product_id>/', views.service_render, name='service_render'),
+    path('feedback', views.feedback_form, name='give_feedback'),
+    path('service_purchased', views.service_purchased, name='service_purchased'),
 ]
