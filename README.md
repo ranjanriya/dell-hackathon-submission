@@ -11,7 +11,7 @@
 ## Install guide
 
 Clone repository
-`git clone https://github.com/SmitiThapar/dell-hackathon-submission`
+`git clone https://github.com/ranjanriya/dell-hackathon-submission`
 
 Change Directory to the repo
 `cd dell-hackathon-submission`
